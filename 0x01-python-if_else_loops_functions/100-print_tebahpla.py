@@ -1,2 +1,7 @@
 #!/usr/bin/python3
-print("".join(chr(122 - i) if i % 2 == 0 else chr(90 - i) for i in range(26)))
+for i in range(26):
+    if i % 2 == 0:
+        c = 122 - i
+    else:
+        c =90 - i
+    print('{:c}'.format(c), end='')
