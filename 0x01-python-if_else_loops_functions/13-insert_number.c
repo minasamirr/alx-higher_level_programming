@@ -1,7 +1,10 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 #include "lists.h"
-listint_t *insert_node(listint_t **head, int number)
-{
+listint_t *insert_node(listint_t **head, int number) {
     listint_t *new_node = malloc(sizeof(listint_t));
+	listint_t *current;
     if (!new_node) {
         return (NULL);
     }
@@ -9,27 +12,33 @@ listint_t *insert_node(listint_t **head, int number)
     new_node->n = number;
     new_node->next = NULL;
 
-    if (!(*head)) {
+    if (*head == NULL) {
         *head = new_node;
         return (new_node);
     }
 
-    listint_t *current = *head;
-    listint_t *prev = NULL;
-
-    while (current && current->n < number) {
-        prev = current;
-        current = current->next;
+    for (current = *head; current; current = current->next) {
+        if (current->n >= number) {
+            break;
+        }
     }
 
-    if (prev) {
-        prev->next = new_node;
-    } else {
+    if (current == *head) {
+        new_node->next = *head;
         *head = new_node;
+        return (new_node);
     }
 
-    new_node->next = current;
+    if (current) {
+        listint_t *prev = *head;
+        while (prev->next != current) {
+            prev = prev->next;
+        }
+        prev->next = new_node;
+        new_node->next = current;
+    } else {
+        (*head)->next = new_node;
+    }
 
     return (new_node);
 }
-
