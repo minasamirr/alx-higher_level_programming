@@ -3,8 +3,8 @@ import sys
 from calculator_1 import add, sub, mul, div
 
 # Check the number of arguments
-if len(sys.argv) != 4:
-    print("Usage: {} <a> <operator> <b>".format(sys.argv[0]))
+if len(sys.argv) != 3:
+    print("Usage: ./100-my_calculator.py <a> <operator> <b>")
     sys.exit(1)
 
 # Extract arguments
