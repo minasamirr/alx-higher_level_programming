@@ -1,10 +1,8 @@
 #!/usr/bin/python3
 import sys
 
-# Get the number of arguments
-num_args = len(sys.argv) - 1  # Subtract 1 for the script name
+num_args = len(sys.argv) - 1
 
-# Print the number of arguments
 if num_args == 0:
     print("0 arguments.")
 else:
