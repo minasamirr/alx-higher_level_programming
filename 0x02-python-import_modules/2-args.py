@@ -10,7 +10,5 @@ if num_args == 0:
 else:
     print("{} argument{}:".format(num_args, 's' if num_args > 1 else ''))
 
-    # Print each argument along with its position
-    for i, arg in enumerate(sys.argv[1:], start=1):
-        print("{}: {}".format(i, arg))
-
+    for i in range(num_args):
+        print("{}: {}".format(i + 1, sys.argv[i + 1]))
