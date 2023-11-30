@@ -10,7 +10,7 @@ if __name__ == "__main__":
     result_multiply = multiply(a, b)
     result_divide = divide(a, b)
 
-    print(f"{a} + {b} = {result_add}")
-    print(f"{a} - {b} = {result_subtract}")
-    print(f"{a} * {b} = {result_multiply}")
-    print(f"{a} / {b} = {result_divide}")
+    print("{:d} + {:d} = {:d}".format(a, b, result_add))
+    print("{:d} - {:d} = {:d}".format(a, b, result_subtract))
+    print("{:d} * {:d} = {:d}".format(a, b, result_multiply))
+    print("{:d} / {:d} = {:d}".format(a, b, result_divide))
