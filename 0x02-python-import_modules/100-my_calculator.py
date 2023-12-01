@@ -24,4 +24,4 @@ def argv_calculator(argv):
 
 if __name__ == "__main__":
     import sys
-    arg_calc(sys.argv)
+    argv_calculator(sys.argv)
