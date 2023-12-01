@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-import sys
 from calculator_1 import add, sub, mul, div
+
+
 def argv_calculator(argv):
     if len(argv) != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
