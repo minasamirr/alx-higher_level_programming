@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 def no_c(my_string):
-    new_str = ""
-    for i in my_string:
-        if i is not 'c' and i is not 'C':
-            new_str += i
-    return (new_str)
+    return ''.join(char for char in my_string if char.lower() not in {'c'})
+
+if __name__ == "__main__":
+    print(no_c("Best School"))
+    print(no_c("Chicago"))
+    print(no_c("C is fun!"))
+
