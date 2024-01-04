@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+Module containing the Rectangle class
+"""
+
+
 class Rectangle:
     """
     Defines a rectangle.
@@ -90,18 +95,21 @@ class Rectangle:
         Returns:
             int: The perimeter of the rectangle.
         """
-        return 2 * (self.__width + self.__height) if self.__width and self.__height else 0
+        if self.__width == 0 or self.__height == 0:
+            return (0)
+        return ((self.__width * 2) + (self.__height * 2))
 
     def __str__(self):
         """
-        Returns a string representation of the rectangle with the character #.
+        Returns a string representation of the rectangle using the '#'
+        character.
 
         Returns:
             str: The string representation of the rectangle.
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        return '\n'.join([str('#' * self.__width) for _ in range(self.__height)])
+        return '\n'.join(['#' * self.__width for _ in range(self.__height)])
 
     def __repr__(self):
         """
