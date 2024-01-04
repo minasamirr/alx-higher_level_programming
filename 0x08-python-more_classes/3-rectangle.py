@@ -1,10 +1,5 @@
 #!/usr/bin/python3
 
-"""
-Module containing the Rectangle class
-"""
-
-
 class Rectangle:
     """
     Defines a rectangle.
@@ -98,25 +93,17 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return (0)
         return ((self.__width * 2) + (self.__height * 2))
-
+ 
     def __str__(self):
         """
-        Returns a string representation of the rectangle using the '#'
-        character.
+        Returns a string representation of the rectangle with the character #.
 
         Returns:
             str: The string representation of the rectangle.
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-
-        symbol_str = str(self.print_symbol)
-        rectangle_str = ""
-
-        for _ in range(self.__height):
-            rectangle_str += symbol_str * self.__width + "\n"
-
-        return rectangle_str[:-1]
+        return '\n'.join([str('#' * self.__width) for _ in range(self.__height)])
 
     def __repr__(self):
         """
