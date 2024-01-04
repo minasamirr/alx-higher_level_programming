@@ -119,4 +119,3 @@ class Rectangle:
             str: The string representation of the rectangle object.
         """
         return "Rectangle({}, {})".format(self.__width, self.__height)
-
