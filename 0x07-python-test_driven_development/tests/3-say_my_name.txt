@@ -1,0 +1,49 @@
+# Valid Test Cases
+
+# Test Case 1
+# Both first and last names are provided
+John Smith
+Expected Output: My name is John Smith
+
+# Test Case 2
+# Only first name is provided
+Walter
+Expected Output: My name is Walter
+
+# Test Case 3
+# Only first name is provided, with an empty last name
+Bob
+Expected Output: My name is Bob
+
+# Invalid Test Cases
+
+# Test Case 4
+# First name is an integer
+12 White
+Expected Output: TypeError - first_name must be a string
+
+# Test Case 5
+# Last name is an integer
+Alice 42
+Expected Output: TypeError - last_name must be a string
+
+# Test Case 6
+# Both names are integers
+42 42
+Expected Output: TypeError - first_name must be a string or last_name must be a string
+
+# Test Case 7
+# First name is a float
+3.14 Brown
+Expected Output: TypeError - first_name must be a string
+
+# Test Case 8
+# Last name is a float
+Harry 2.718
+Expected Output: TypeError - last_name must be a string
+
+# Test Case 9
+# Both names are floats
+2.718 3.14
+Expected Output: TypeError - first_name must be a string or last_name must be a string
+
