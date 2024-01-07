@@ -1,0 +1,70 @@
+# Test cases for add_integer function
+
+# Valid cases
+1 2
+Expected Output: 3
+
+100 -2
+Expected Output: 98
+
+2
+Expected Output: 100
+
+100.3 -2
+Expected Output: 98
+
+# Cases with exceptions
+4 "School"
+Expected Output: TypeError - b must be an integer
+
+None
+Expected Output: TypeError - a must be an integer
+
+# Usage Instructions
+# To use the add_integer function, pass two parameters, a and b.
+# If b is not provided, it defaults to 98.
+# The function returns the sum of a and b as an integer.
+
+# Example Usage:
+# add_integer(1, 2)
+#   Returns: 3
+
+# add_integer(100, -2)
+#   Returns: 98
+
+# add_integer(2)
+#   Returns: 100
+
+# add_integer(100.3, -2)
+#   Returns: 98
+
+# Additional Test Cases
+# Testing with large integers
+999999999999999999999999999 1
+Expected Output: 1000000000000000000000000098
+
+# Testing with negative floats
+-5.5 -2.5
+Expected Output: -7
+
+# Testing with zero
+0 42
+Expected Output: 42
+
+# Testing with strings
+"Hello" 3
+Expected Output: TypeError - a must be an integer or b must be an integer
+
+2 "World"
+Expected Output: TypeError - b must be an integer
+
+"Hello" "World"
+Expected Output: TypeError - a must be an integer or b must be an integer
+
+# Testing with infinity
+float('inf') 42
+Expected Output: TypeError - a must be an integer or b must be an integer
+
+100 float('inf')
+Expected Output: TypeError - b must be an integer
+
