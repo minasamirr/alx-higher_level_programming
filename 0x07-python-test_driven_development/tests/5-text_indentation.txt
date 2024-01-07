@@ -1,0 +1,120 @@
+# Valid Test Cases
+
+# Test Case 1
+# Simple sentence without new lines
+This is a simple sentence.
+Expected Output:
+This is a simple sentence.
+
+# Test Case 2
+# Sentence with multiple spaces and new lines
+   This   is a sentence.
+With multiple spaces and new lines.
+Expected Output:
+   This   is a sentence.$
+$
+With multiple spaces and new lines.
+
+# Test Case 3
+# Sentence with multiple characters triggering new lines
+This is a sentence? A new sentence: yes!
+Expected Output:
+This is a sentence?$
+A new sentence:$
+yes!
+
+# Test Case 4
+# Empty string
+""
+Expected Output:
+(prints nothing)
+
+# Invalid Test Cases
+
+# Test Case 5
+# Integer input
+42
+Expected Output: TypeError - text must be a string
+
+# Test Case 6
+# Float input
+3.14
+Expected Output: TypeError - text must be a string
+
+# Test Case 7
+# List input
+["This", "is", "a", "list"]
+Expected Output: TypeError - text must be a string
+
+# Test Case 8
+# None input
+None
+Expected Output: TypeError - text must be a string
+# More Complex Test Cases
+
+# Test Case 9
+# Long paragraph with various punctuation marks
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres. Sed ego in hoc resisto; Atque hoc loco similitudines eas, quibus illi uti solent, dissimillimas proferebas. Omnia contraria, quos etiam insanos esse vultis. Duo Reges: constructio interrete. Itaque ab his ordiamur. Piso, familiaris noster, et alia multa et hoc loco Stoicos irridebat: Quid enim? Expectoque quid ad id, quod quaerebam, respondeas. Inde sermone vario sex illa a Dipylo stadia confecimus.
+Expected Output:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.$
+Quonam modo?$
+Utrum igitur tibi litteram videor an totas paginas commovere?$
+Non autem hoc:$
+igitur ne illud quidem.$
+Fortasse id optimum, sed ubi illud:$
+Plus semper voluptatis?$
+Teneo, inquit, finem illi videri nihil dolere.$
+Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.$
+Si id dicis, vicimus.$
+Inde sermone vario sex illa a Dipylo stadia confecimus.$
+Sin aliud quid voles, postea.$
+Quae animi affectio suum cuique tribuens atque hanc, quam dico.$
+Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres.$
+Sed ego in hoc resisto;$
+Atque hoc loco similitudines eas, quibus illi uti solent, dissimillimas proferebas.$
+Omnia contraria, quos etiam insanos esse vultis.$
+Duo Reges: constructio interrete.$
+Itaque ab his ordiamur.$
+Piso, familiaris noster, et alia multa et hoc loco Stoicos irridebat:$
+Quid enim?$
+Expectoque quid ad id, quod quaerebam, respondeas.$
+Inde sermone vario sex illa a Dipylo stadia confecimus.
+
+# Test Case 10
+# Sentence with multiple spaces, tabs, and new lines
+This  is a    sentence with      various spacing and tabs.
+There are new lines and multiple spaces.
+Expected Output:
+This  is a    sentence with      various spacing and tabs.$
+There are new lines and multiple spaces.
+
+# Test Case 11
+# Sentence with various punctuation marks triggering new lines
+This is a sentence with dots... and question marks? What about colons: and semicolons; and exclamation marks!
+Expected Output:
+This is a sentence with dots...$
+and question marks?$
+What about colons: and semicolons;$
+and exclamation marks!
+
+# Test Case 12
+# Combination of sentences with different lengths
+Short.
+This is a longer sentence. What about this one? It has multiple sentences within.
+How about a really long sentence that should be split into multiple lines? This is it!
+Expected Output:
+Short.$
+$
+This is a longer sentence.$
+What about this one?$
+It has multiple sentences within.$
+$
+How about a really long sentence that should be split into multiple lines?$
+This is it!
+
+# Test Case 13
+# Edge case with an empty string
+""
+Expected Output:
+(prints nothing)
+

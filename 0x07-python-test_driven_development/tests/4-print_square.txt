@@ -1,0 +1,55 @@
+# Valid Test Cases
+
+# Test Case 1
+# Square of size 4
+4
+Expected Output:
+####
+####
+####
+####
+
+# Test Case 2
+# Square of size 10
+10
+Expected Output:
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+# Test Case 3
+# Square of size 0
+0
+Expected Output:
+(prints nothing)
+
+# Test Case 4
+# Square of size 1
+1
+Expected Output:
+#
+
+# Invalid Test Cases
+
+# Test Case 5
+# Size is a float
+3.14
+Expected Output: TypeError - size must be an integer
+
+# Test Case 6
+# Negative size
+-5
+Expected Output: ValueError - size must be >= 0
+
+# Test Case 7
+# Negative float size
+-3.14
+Expected Output: TypeError - size must be an integer
+
