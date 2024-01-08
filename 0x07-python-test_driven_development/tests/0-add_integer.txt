@@ -1,70 +1,129 @@
-# Test cases for add_integer function
+# 0-add_integer.txt
 
-# Valid cases
-1 2
-Expected Output: 3
+===========================
+How to Use 0-add_integer.py
+===========================
 
-100 -2
-Expected Output: 98
+This module defines an integer addition function ``add_integer(a, b=98)``.
 
-2
-Expected Output: 100
 
-100.3 -2
-Expected Output: 98
 
-# Cases with exceptions
-4 "School"
-Expected Output: TypeError - b must be an integer
+Usage
+=====
 
-None
-Expected Output: TypeError - a must be an integer
+``add_integer(...)``` returns the addition of its two arguments. For numbers,
+that value is equivalent to using the ``+`` operator.
 
-# Usage Instructions
-# To use the add_integer function, pass two parameters, a and b.
-# If b is not provided, it defaults to 98.
-# The function returns the sum of a and b as an integer.
+::
 
-# Example Usage:
-# add_integer(1, 2)
-#   Returns: 3
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(1, 2)
+    3
 
-# add_integer(100, -2)
-#   Returns: 98
+::
 
-# add_integer(2)
-#   Returns: 100
+    >>> add_integer(100, -2)
+    98
 
-# add_integer(100.3, -2)
-#   Returns: 98
+::
 
-# Additional Test Cases
+    >>> add_integer(2)
+    100
+
+::
+
+    >>> add_integer(100.3, -2)
+    98
+
+
+
+Additional Test Cases
+=====================
+
 # Testing with large integers
-999999999999999999999999999 1
-Expected Output: 1000000000000000000000000098
+::
+
+    >>> add_integer(999999999999999999999999999, 1)
+    1000000000000000000000000098
 
 # Testing with negative floats
--5.5 -2.5
-Expected Output: -7
+::
+
+    >>> add_integer(-5.5, -2.5)
+    -7
 
 # Testing with zero
-0 42
-Expected Output: 42
+::
+
+    >>> add_integer(0, 42)
+    42
 
 # Testing with strings
-"Hello" 3
-Expected Output: TypeError - a must be an integer or b must be an integer
+::
 
-2 "World"
-Expected Output: TypeError - b must be an integer
+    >>> add_integer("Hello", 6)
+    Traceback (most recent call last):
+    TypeError: a must be an integer or b must be an integer
 
-"Hello" "World"
-Expected Output: TypeError - a must be an integer or b must be an integer
+::
+
+    >>> add_integer(12, "World")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+::
+
+    >>> add_integer("Hello", "World")
+    Traceback (most recent call last):
+    TypeError: a must be an integer or b must be an integer
 
 # Testing with infinity
-float('inf') 42
-Expected Output: TypeError - a must be an integer or b must be an integer
+::
 
-100 float('inf')
-Expected Output: TypeError - b must be an integer
+    >>> add_integer(float('inf'), 42)
+    Traceback (most recent call last):
+    TypeError: a must be an integer or b must be an integer
 
+::
+
+    >>> add_integer(100, float('inf'))
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+# Testing with NaN
+::
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+
+::
+
+    >>> add_integer(10, float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+
+# Testing with large negative integers
+::
+
+    >>> add_integer(-999999999999999999999999999, -1)
+    -1000000000000000000000000099
+
+# Testing with negative zero
+::
+
+    >>> add_integer(-0, 42)
+    42
+
+# Testing with positive and negative infinity
+::
+
+    >>> add_integer(float('-inf'), 42)
+    Traceback (most recent call last):
+    TypeError: a must be an integer or b must be an integer
+
+::
+
+    >>> add_integer(100, float('-inf'))
+    Traceback (most recent call last):
+    TypeError: b must be an integer
