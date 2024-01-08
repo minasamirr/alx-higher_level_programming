@@ -1,24 +1,39 @@
 # Test Case 1: Empty list
->>> MyList([])
-[]
+
+	>>> MyList([])
+	[]
+
+::
 
 # Test Case 2: List with integers
->>> MyList([1, 4, 7, -3, 9])
-[-3, 1, 4, 7, 9]
+
+	>>> MyList([1, 4, 7, -3, 9])
+	[-3, 1, 4, 7, 9]
+
+::
 
 # Test Case 3: List with strings
->>> MyList(['orange', 'grape', 'apple', 'banana'])
-['apple', 'banana', 'grape', 'orange']
+
+	>>> MyList(['orange', 'grape', 'apple', 'banana'])
+	['apple', 'banana', 'grape', 'orange']
+
+::
 
 # Test Case 4: List with mixed types (integers and strings)
->>> MyList(['apple', 'banana', 7, -3, 'grape', 1, 9])
-[-3, 1, 'apple', 'banana', 'grape', 7, 9]
+
+	>>> MyList(['apple', 'banana', 7, -3, 'grape', 1, 9])
+	[-3, 1, 'apple', 'banana', 'grape', 7, 9]
+
+::
 
 # Test Case 5: List with duplicates
->>> MyList([5, 4, 3, 2, 1, 4, 2, 5])
-[1, 2, 2, 3, 4, 4, 5, 5]
+
+	>>> MyList([5, 4, 3, 2, 1, 4, 2, 5])
+	[1, 2, 2, 3, 4, 4, 5, 5]
+
+::
 
 # Test Case 6: List with a single element
->>> MyList([42])
-[42]
 
+	>>> MyList([42])
+	[42]
