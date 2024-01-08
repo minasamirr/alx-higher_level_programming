@@ -1,49 +1,77 @@
-# Valid Test Cases
+# name_formatting.txt
+
+==============================
+How to Use name_formatting.py
+==============================
+
+This module defines a name formatting function ``format_name(first_name, last_name='')``.
+
+Valid Test Cases
+================
 
 # Test Case 1
 # Both first and last names are provided
-John Smith
-Expected Output: My name is John Smith
+::
+
+    >>> format_name('John', 'Smith')
+    'My name is John Smith'
 
 # Test Case 2
 # Only first name is provided
-Walter
-Expected Output: My name is Walter
+::
+
+    >>> format_name('Walter')
+    'My name is Walter'
 
 # Test Case 3
 # Only first name is provided, with an empty last name
-Bob
-Expected Output: My name is Bob
+::
 
-# Invalid Test Cases
+    >>> format_name('Bob', '')
+    'My name is Bob'
+
+Invalid Test Cases
+==================
 
 # Test Case 4
 # First name is an integer
-12 White
-Expected Output: TypeError - first_name must be a string
+::
+
+    >>> format_name(12, 'White')
+    TypeError - first_name must be a string
 
 # Test Case 5
 # Last name is an integer
-Alice 42
-Expected Output: TypeError - last_name must be a string
+::
+
+    >>> format_name('Alice', 42)
+    TypeError - last_name must be a string
 
 # Test Case 6
 # Both names are integers
-42 42
-Expected Output: TypeError - first_name must be a string or last_name must be a string
+::
+
+    >>> format_name(42, 42)
+    TypeError - first_name must be a string or last_name must be a string
 
 # Test Case 7
 # First name is a float
-3.14 Brown
-Expected Output: TypeError - first_name must be a string
+::
+
+    >>> format_name(3.14, 'Brown')
+    TypeError - first_name must be a string
 
 # Test Case 8
 # Last name is a float
-Harry 2.718
-Expected Output: TypeError - last_name must be a string
+::
+
+    >>> format_name('Harry', 2.718)
+    TypeError - last_name must be a string
 
 # Test Case 9
 # Both names are floats
-2.718 3.14
-Expected Output: TypeError - first_name must be a string or last_name must be a string
+::
+
+    >>> format_name(2.718, 3.14)
+    TypeError - first_name must be a string or last_name must be a string
 

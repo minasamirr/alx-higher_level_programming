@@ -1,5 +1,4 @@
 # matrix_division.txt
-# [Your Name] <[Your Email]>
 
 =========================
 How to Use matrix_division.py
