@@ -127,3 +127,21 @@ Additional Test Cases
     >>> add_integer(100, float('-inf'))
     Traceback (most recent call last):
     TypeError: b must be an integer
+
+# Testing with large positive floats
+::
+
+    >>> add_integer(1e20, 1e19)
+    101000000000000000000
+
+# Testing with large negative floats
+::
+
+    >>> add_integer(-1e20, -1e19)
+    -101000000000000000000
+
+# Testing with a mix of large positive and negative floats
+::
+
+    >>> add_integer(1e20, -1e19)
+    89900000000000000000
