@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 import sys
 
-
 def print_stats(total_size, status_codes):
     """
     Print statistics based on the accumulated data.
@@ -14,11 +13,10 @@ def print_stats(total_size, status_codes):
     - None
     """
     print("File size: {:d}".format(total_size))
-
+    
     sorted_status_codes = sorted(status_codes.items())
     for code, count in sorted_status_codes:
         print("{}: {}".format(code, count))
-
 
 def parse_line(line, total_size, status_codes):
     """
@@ -45,17 +43,16 @@ def parse_line(line, total_size, status_codes):
 
     return total_size
 
+total_size = 0
+status_codes = {}
 
-if __name__ == "__main__":
-    total_size = 0
-    status_codes = {}
+try:
+    for i, line in enumerate(sys.stdin, start=1):
+        total_size = parse_line(line, total_size, status_codes)
 
-    try:
-        for i, line in enumerate(sys.stdin, start=1):
-            total_size = parse_line(line, total_size, status_codes)
+        if i % 10 == 0:
+            print_stats(total_size, status_codes)
 
-            if i % 10 == 0:
-                print_stats(total_size, status_codes)
+except KeyboardInterrupt:
+    print_stats(total_size, status_codes)
 
-    except KeyboardInterrupt:
-        print_stats(total_size, status_codes)
