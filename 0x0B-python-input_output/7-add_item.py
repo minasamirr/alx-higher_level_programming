@@ -33,3 +33,11 @@ def add_item(args):
 
     # Save the updated list to the file
     save_to_json_file(my_list, filename)
+
+
+if __name__ == "__main__":
+    # Extract command line arguments excluding the script name
+    arguments = sys.argv[1:]
+
+    # Add the arguments to the list and save to file
+    add_item(arguments)
