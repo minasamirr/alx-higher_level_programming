@@ -33,20 +33,15 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Write the JSON string representation of list_objs to a file"""
+        """Write the JSON serialization of a list of objects to a file.
+
+        Args:
+            list_objs (list): A list of inherited Base instances.
+        """
         filename = cls.__name__ + ".json"
-        with open(filename, mode="w") as file:
+        with open(filename, "w") as jsonfile:
             if list_objs is None:
-                file.write("[]")
+                jsonfile.write("[]")
             else:
-                list_dicts = [obj.to_dictionary() for obj in list_objs]
-                file.write(cls.to_json_string(list_dicts))
-
-
-if __name__ == "__main__":
-    r1 = Rectangle(10, 7, 2, 8)
-    r2 = Rectangle(2, 4)
-    Rectangle.save_to_file([r1, r2])
-
-    with open("Rectangle.json", "r") as file:
-        print(file.read())
+                list_dicts = [o.to_dictionary() for o in list_objs]
+                jsonfile.write(Base.to_json_string(list_dicts))
