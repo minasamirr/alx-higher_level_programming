@@ -3,11 +3,15 @@
 import unittest
 import json
 import sys
-import os
+import io
+from models.base import Base
 from models.rectangle import Rectangle
 
 
 class TestRectangleInstantiation(unittest.TestCase):
+    """Unittests for testing instantiation of the Rectangle class."""
+    
+
     def test_rectangle_is_base(self):
         self.assertIsInstance(Rectangle(10, 2), Base)
 
