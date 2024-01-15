@@ -12,7 +12,7 @@ class Base:
         """Class constructor
 
         Args:
-            id (int): Identifier for the object (default is None)
+            id (int): Identifier for the instance (default is None)
         """
         if id is not None:
             self.id = id
@@ -22,15 +22,8 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Convert list of dictionaries to JSON string representation
-
-        Args:
-            list_dictionaries (list): List of dictionaries
-
-        Returns:
-            str: JSON string representation of list_dictionaries
-        """
-        if not list_dictionaries or list_dictionaries is None:
+        """Return JSON string representation of list_dictionaries"""
+        if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
