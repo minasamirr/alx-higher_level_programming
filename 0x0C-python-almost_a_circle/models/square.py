@@ -16,6 +16,7 @@ class Square(Rectangle):
             id (int): Identifier for the square (default is None)
         """
         super().__init__(size, size, x, y, id)
+        # Call the super class with id, x, y, width, and height
         self.size = size
 
     @property
@@ -35,40 +36,25 @@ class Square(Rectangle):
             self.id, self.x, self.y, self.width
         )
 
-    def update(self, *args, **kwargs):
-        """
-        Update attributes with provided arguments or key-worded arguments
-        """
-        if args:
-            attributes = ['id', 'size', 'x', 'y']
-            for i, arg in enumerate(args):
-                setattr(self, attributes[i], arg)
-        else:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
+    def to_dictionary(self):
+        """Return dictionary representation of the Square"""
+        return {
+            'id': self.id,
+            'size': self.size,
+            'x': self.x,
+            'y': self.y
+        }
 
 
 if __name__ == "__main__":
-    s1 = Square(5)
+    s1 = Square(10, 2, 1)
     print(s1)
+    s1_dictionary = s1.to_dictionary()
+    print(s1_dictionary)
+    print(type(s1_dictionary))
 
-    s1.update(10)
-    print(s1)
-
-    s1.update(1, 2)
-    print(s1)
-
-    s1.update(1, 2, 3)
-    print(s1)
-
-    s1.update(1, 2, 3, 4)
-    print(s1)
-
-    s1.update(x=12)
-    print(s1)
-
-    s1.update(size=7, y=1)
-    print(s1)
-
-    s1.update(size=7, id=89, y=1)
-    print(s1)
+    s2 = Square(1, 1)
+    print(s2)
+    s2.update(**s1_dictionary)
+    print(s2)
+    print(s1 == s2)
