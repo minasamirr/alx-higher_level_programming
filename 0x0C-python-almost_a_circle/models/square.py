@@ -16,7 +16,6 @@ class Square(Rectangle):
             id (int): Identifier for the square (default is None)
         """
         super().__init__(size, size, x, y, id)
-        # Call the super class with id, x, y, width, and height
         self.size = size
 
     @property
@@ -36,15 +35,40 @@ class Square(Rectangle):
             self.id, self.x, self.y, self.width
         )
 
+    def update(self, *args, **kwargs):
+        """
+        Update attributes with provided arguments or key-worded arguments
+        """
+        if args:
+            attributes = ['id', 'size', 'x', 'y']
+            for i, arg in enumerate(args):
+                setattr(self, attributes[i], arg)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
 
 if __name__ == "__main__":
     s1 = Square(5)
     print(s1)
-    print(s1.size)
-    s1.size = 10
+
+    s1.update(10)
     print(s1)
 
-    try:
-        s1.size = "9"
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
+    s1.update(1, 2)
+    print(s1)
+
+    s1.update(1, 2, 3)
+    print(s1)
+
+    s1.update(1, 2, 3, 4)
+    print(s1)
+
+    s1.update(x=12)
+    print(s1)
+
+    s1.update(size=7, y=1)
+    print(s1)
+
+    s1.update(size=7, id=89, y=1)
+    print(s1)
