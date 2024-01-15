@@ -87,3 +87,7 @@ class TestRectangleInstantiation(unittest.TestCase):
         with self.assertLogs() as logs:
             r.display()
         self.assertEqual(logs.output, ['OO', 'OO', 'OO'])
+
+
+if __name__ == "__main__":
+    unittest.main()
