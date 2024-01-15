@@ -58,12 +58,51 @@ class Base:
         dummy_instance.update(**dictionary)  # Update with real values
         return dummy_instance
 
+    @classmethod
+    def load_from_file(cls):
+        """Return a list of instances from a JSON file"""
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, mode="r") as file:
+                json_string = file.read()
+                list_dicts = cls.from_json_string(json_string)
+                return [cls.create(**dict_item) for dict_item in list_dicts]
+        except FileNotFoundError:
+            return []
+
 
 if __name__ == "__main__":
-    r1 = Rectangle(3, 5, 1)
-    r1_dictionary = r1.to_dictionary()
-    r2 = Rectangle.create(**r1_dictionary)
-    print(r1)
-    print(r2)
-    print(r1 is r2)
-    print(r1 == r2)
+    r1 = Rectangle(10, 7, 2, 8)
+    r2 = Rectangle(2, 4)
+    list_rectangles_input = [r1, r2]
+
+    Rectangle.save_to_file(list_rectangles_input)
+
+    list_rectangles_output = Rectangle.load_from_file()
+
+    for rect in list_rectangles_input:
+        print("[{}] {}".format(id(rect), rect))
+
+    print("---")
+
+    for rect in list_rectangles_output:
+        print("[{}] {}".format(id(rect), rect))
+
+    print("---")
+    print("---")
+
+    s1 = Square(5)
+    s2 = Square(7, 9, 1)
+    list_squares_input = [s1, s2]
+
+    Square.save_to_file(list_squares_input)
+
+    list_squares_output = Square.load_from_file()
+
+    for square in list_squares_input:
+        print("[{}] {}".format(id(square), square))
+
+    print("---")
+
+    for square in list_squares_output:
+        print("[{}] {}".format(id(square), square))
