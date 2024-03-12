@@ -3,7 +3,7 @@
 // 9-add.js
 
 // Define a function named add with the prototype: function add(a, b)
-function add(a, b) {
+function add (a, b) {
   // Return the addition of the two integers
   return a + b;
 }

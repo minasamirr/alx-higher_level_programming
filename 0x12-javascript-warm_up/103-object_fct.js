@@ -9,7 +9,7 @@ const myObject = {
   // Define the incr function to increment the value property
   incr: function () {
     this.value++;
-  },
+  }
 };
 
 console.log(myObject); // Print initial state of myObject

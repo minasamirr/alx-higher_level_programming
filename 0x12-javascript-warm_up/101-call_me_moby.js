@@ -3,7 +3,7 @@
 // 101-call_me_moby.js
 
 // Define the function callMeMoby
-function callMeMoby(x, theFunction) {
+function callMeMoby (x, theFunction) {
   // Loop x times and execute theFunction each time
   for (let i = 0; i < x; i++) {
     theFunction();

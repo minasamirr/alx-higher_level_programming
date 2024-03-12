@@ -3,7 +3,7 @@
 // 10-factorial.js
 
 // Define a function named factorial
-function factorial(n) {
+function factorial (n) {
   // Base case: factorial of 0 is 1
   if (n === 0) {
     return 1;
