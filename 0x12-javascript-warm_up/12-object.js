@@ -3,7 +3,7 @@
 // 12-object.js
 
 const myObject = {
-  type: "object",
+  type: 'object',
   value: 12,
 };
 

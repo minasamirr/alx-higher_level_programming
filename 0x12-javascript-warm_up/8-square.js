@@ -12,9 +12,9 @@ const size = parseInt(arg);
 if (!isNaN(size) && size > 0) {
   // Loop to print the square
   for (let i = 0; i < size; i++) {
-    console.log("X".repeat(size));
+    console.log('X'.repeat(size));
   }
 } else {
-  // Print "Missing size" if conversion failed or if the number is not positive
-  console.log("Missing size");
+  // Print 'Missing size' if conversion failed or if the number is not positive
+  console.log('Missing size');
 }

@@ -18,5 +18,5 @@ if (!isNaN(arg1) && !isNaN(arg2)) {
   console.log(add(arg1, arg2));
 } else {
   // Print NaN if one or both arguments are not valid integers
-  console.log("NaN");
+  console.log('NaN');
 }
