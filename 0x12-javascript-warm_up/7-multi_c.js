@@ -10,11 +10,11 @@ const num = parseInt(arg);
 
 // Check if the conversion resulted in a valid positive integer
 if (!isNaN(num) && num > 0) {
-	// Loop to print "C is fun" x times
-	for (let i = 0; i < num; i++) {
-		console.log("C is fun");
-	}
+  // Loop to print 'C is fun' x times
+  for (let i = 0; i < num; i++) {
+    console.log('C is fun');
+  }
 } else {
-	// Print "Missing number of occurrences" if conversion failed or if the number is not positive
-	console.log("Missing number of occurrences");
+  // Print 'Missing number of occurrences' if conversion failed or if the number is not positive
+  console.log('Missing number of occurrences');
 }

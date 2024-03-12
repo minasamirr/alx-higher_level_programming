@@ -4,12 +4,12 @@
 
 // Define myObject with type and value properties
 const myObject = {
-	type: 'object',
-	value: 12,
-	// Define the incr function to increment the value property
-	incr: function() {
-		this.value++;
-	}
+  type: "object",
+  value: 12,
+  // Define the incr function to increment the value property
+  incr: function () {
+    this.value++;
+  },
 };
 
 console.log(myObject); // Print initial state of myObject

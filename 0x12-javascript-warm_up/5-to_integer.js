@@ -10,9 +10,9 @@ const num = parseInt(arg);
 
 // Check if the conversion resulted in a valid integer
 if (!isNaN(num)) {
-	// Print the integer
-	console.log(`My number: ${num}`);
+  // Print the integer
+  console.log(`My number: ${num}`);
 } else {
-	// Print "Not a number" if conversion failed
-	console.log("Not a number");
+  // Print 'Not a number' if conversion failed
+  console.log('Not a number');
 }
