@@ -13,8 +13,8 @@ if __name__ == "__main__":
     # Create a cursor object using cursor() method
     cursor = db.cursor()
 
-    # Execute SQL query to select all states sorted by id
-    cursor.execute("SELECT * FROM states ORDER BY id")
+    # Execute SQL query to select states starting with 'N' sorted by id
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
 
     # Fetch all the rows using fetchall() method
     data = cursor.fetchall()
