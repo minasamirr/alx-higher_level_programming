@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Script that fetches https://alx-intranet.hbtn.io/status using the requests package
-and displays the body of the response in the specified format.
+Script that fetches https://alx-intranet.hbtn.io/status using the requests
+package and displays the body of the response in the specified format.
 """
 
 import requests
