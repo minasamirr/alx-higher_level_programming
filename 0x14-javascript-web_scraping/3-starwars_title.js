@@ -20,15 +20,15 @@ request.get(apiUrl, (error, response, body) => {
     console.error(error);
     return;
   }
-  
+
   if (response.statusCode !== 200) {
     console.error(`Failed to retrieve data: Status code ${response.statusCode}`);
     return;
   }
-  
+
   // Parse the response body to JSON
   const movieData = JSON.parse(body);
-  
+
   // Print the title of the movie
   console.log(movieData.title);
 });

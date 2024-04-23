@@ -17,20 +17,20 @@ request.get(apiUrl, (error, response, body) => {
     console.error(error);
     return;
   }
-  
+
   if (response.statusCode !== 200) {
     console.error(`Failed to retrieve data: Status code ${response.statusCode}`);
     return;
   }
-  
+
   // Parse the response body to JSON
   const filmsData = JSON.parse(body);
-  
+
   // Filter the films where Wedge Antilles (character ID 18) is present
   const filmsWithWedge = filmsData.results.filter(film =>
     film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')
   );
-  
+
   // Print the number of films where Wedge Antilles is present
   console.log(filmsWithWedge.length);
 });
